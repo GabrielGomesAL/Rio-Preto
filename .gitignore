@@ -1,0 +1,15 @@
+node_modules/
+dist/
+qa/
+coverage/
+.vite/
+.DS_Store
+Thumbs.db
+*.log
+*.tsbuildinfo
+tailwind.config.js
+tailwind.config.d.ts
+vite.config.js
+vite.config.d.ts
+.env
+.env.*

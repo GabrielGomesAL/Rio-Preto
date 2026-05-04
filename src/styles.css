@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #071512;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #071512;
+  font-family:
+    Inter,
+    "Avenir Next",
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(199, 151, 74, 0.45);
+  color: #f3f7f4;
+}
+
+section {
+  scroll-margin-top: 128px;
+}
+
+.hero-image {
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.2) 24%, #000 52%, #000 100%);
+  object-position: center right;
+  opacity: 0.96;
+}
+
+.hero-fade {
+  background:
+    linear-gradient(90deg, #071512 0%, rgba(7, 21, 18, 0.97) 39%, rgba(7, 21, 18, 0.74) 68%, rgba(7, 21, 18, 0.32) 100%),
+    linear-gradient(180deg, rgba(7, 21, 18, 0.3) 0%, #071512 100%);
+}
+
+.geo-scene-3d canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.technical-grid {
+  background-image:
+    linear-gradient(rgba(243, 247, 244, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 247, 244, 0.055) 1px, transparent 1px),
+    linear-gradient(135deg, transparent 0 48%, rgba(199, 151, 74, 0.13) 49%, transparent 50% 100%);
+  background-size:
+    64px 64px,
+    64px 64px,
+    220px 220px;
+}
+
+.topo-light {
+  background-image:
+    radial-gradient(ellipse at 15% 12%, rgba(199, 151, 74, 0.14), transparent 34%),
+    linear-gradient(125deg, transparent 0 18%, rgba(18, 62, 52, 0.08) 18% 18.4%, transparent 18.4% 100%),
+    repeating-radial-gradient(
+      ellipse at 82% 22%,
+      rgba(18, 62, 52, 0.12) 0 1px,
+      transparent 1px 17px
+    );
+}
+
+.mineral-noise {
+  background-image:
+    linear-gradient(115deg, transparent 0 42%, rgba(199, 151, 74, 0.08) 42% 42.4%, transparent 42.4% 100%),
+    radial-gradient(ellipse at 10% 90%, rgba(43, 111, 122, 0.14), transparent 35%),
+    repeating-linear-gradient(160deg, rgba(243, 247, 244, 0.035) 0 1px, transparent 1px 18px);
+}
+
+.strata-panel {
+  background:
+    linear-gradient(110deg, rgba(199, 151, 74, 0.09), transparent 34%),
+    repeating-linear-gradient(155deg, rgba(243, 247, 244, 0.05) 0 1px, transparent 1px 18px);
+}
+
+.rc-panel-grid {
+  background-image:
+    linear-gradient(rgba(243, 247, 244, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 247, 244, 0.06) 1px, transparent 1px),
+    repeating-linear-gradient(150deg, rgba(199, 151, 74, 0.11) 0 1px, transparent 1px 24px);
+  background-size:
+    42px 42px,
+    42px 42px,
+    auto;
+}
+
+.contact-map {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(7, 21, 18, 0.18) 0 1px, transparent 1px 36px),
+    repeating-linear-gradient(90deg, rgba(7, 21, 18, 0.18) 0 1px, transparent 1px 36px),
+    repeating-radial-gradient(ellipse at 70% 40%, rgba(7, 21, 18, 0.18) 0 1px, transparent 1px 18px);
+}
+
+.service-card::before,
+.equipment-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(199, 151, 74, 0.14), transparent 34%),
+    linear-gradient(180deg, transparent 0%, rgba(18, 62, 52, 0.04) 100%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.service-card:hover::before,
+.equipment-card:hover::before {
+  opacity: 1;
+}
+
+.journey-line {
+  position: relative;
+}
+
+.journey-line::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(199, 151, 74, 0.55), transparent);
+}
+
+@media (max-width: 1279px) {
+  .journey-line::before {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-image {
+    mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.72) 42%, transparent 100%);
+    object-position: center;
+    opacity: 0.5;
+  }
+
+  .hero-fade {
+    background:
+      linear-gradient(180deg, rgba(7, 21, 18, 0.72) 0%, #071512 82%),
+      linear-gradient(90deg, rgba(7, 21, 18, 0.93), rgba(7, 21, 18, 0.58));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
